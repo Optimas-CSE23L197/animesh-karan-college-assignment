@@ -26,10 +26,10 @@ class PricingControllerTest {
 
         mockMvc.perform(
                 post("/pricing/load")
-                        .param("filePath", "data/pricing-data.tsv"))
+                        .param("filePath", "data/config.tsv"))
                 .andExpect(status().isOk());
 
         // Verify service method was called
-        verify(pricingService).loadTsvFile("data/pricing-data.tsv");
+        verify(pricingService).loadTsvFile("data/config.tsv");
     }
 }

@@ -12,12 +12,14 @@ import com.example.assignment_two.service.PricingService;
 @CrossOrigin(origins = "*")
 public class PricingController {
 
+    // import price service
     private final PricingService pricingService;
 
     public PricingController(PricingService pricingService) {
         this.pricingService = pricingService;
     }
 
+    // post mapping to load tsv data
     @PostMapping("/load")
     public ResponseEntity<String> loadTsv(@RequestParam String filePath) throws IOException {
         System.out.println("Message from controller layer");
